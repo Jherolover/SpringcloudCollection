@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: springcloud-user
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.5.130:8848 #nacos中心地址i
+        file-extension: yaml # 配置文件格式
+  profiles:
+    active: dev #环境标识

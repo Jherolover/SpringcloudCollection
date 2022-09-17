@@ -55,8 +55,8 @@ public class OrderController {
         //User user = restTemplate.getForObject("http://localhost:8081/springcloud/user/getUserByUseId/"+order.getUserId(), User.class);
         //res.put("user",user);
         //获取商品信息
-        Product product = restTemplate.getForObject("http://springcloud-product/springcloud/product/getProductById/"+order.getProductId(), Product.class);
-        res.put("product",product);
+        //Product product = restTemplate.getForObject("http://springcloud-product/springcloud/product/getProductById/"+order.getProductId(), Product.class);
+        //res.put("product",product);
         return res;
     }
 }

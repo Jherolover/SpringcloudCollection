@@ -1,0 +1,34 @@
+server:
+  port: 8089
+
+#配置应用的名字
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.5.130:8848
+    gateway:
+      discovery:
+        locator:
+          enabled: off  # 让gateway可以发现nacos中的微服务
+      ### 此处我们配置我们自己订单模块，商品模块，用户模块的配置
+      routes:   #路由数组[路由 就是指定当请求满足什么条件的时候转到哪个微服务]
+          ##用户模块
+        - id: springcloud-order
+          uri: lb://springcloud-order  #服务请求转发
+          #uri: http://localhost:8083  #服务请求转发
+          predicates:
+           - Path=/springcloud-order/**
+         ##商品模块
+        - id: springcloud-product
+          uri: lb://springcloud-product  #服务请求转发
+          predicates:
+           - Path=/springcloud-product/**
+         ##用户模块
+        - id: springcloud-user
+          uri: lb://springcloud-user  #服务请求转发
+          #uri: http://localhost:8081  #服务请求转发
+          predicates:
+           - Path=/springcloud-user/**

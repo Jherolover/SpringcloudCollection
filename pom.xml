@@ -8,11 +8,15 @@
 		<module>springcloud-user</module>
 		<module>springcloud-order</module>
 		<module>springcloud-product</module>
+		<module>springcloud-product8085</module>
+		<module>springcloud-product8086</module>
 		<module>springcloud-stock</module>
         <module>springcloud_seata_order</module>
 		<module>springcloud_seata_stock</module>
 		<module>springcloud_seata_account</module>
-	</modules>
+        <module>springcloud_sentinel_order</module>
+        <module>springcloud-gateway</module>
+    </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
